@@ -21,7 +21,7 @@ def main():
     if mode == 'E':
         text = input("enter a message to encrypt: ").encode('utf-8')
         textlength = len(text)
-        key_choice = input("do you want to provide a key? must match message length, if you say no one will be provided for you. (Y/N): ").strip().upper()
+        key_choice = input("do you want to provide a key? must match message length, if you say no then one will be provided for you. (Y/N): ").strip().upper()
         if key_choice == 'Y':
             key_hex = input("paste your key in hex: ")
             key = bytes.fromhex(key_hex)
