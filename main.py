@@ -9,10 +9,11 @@
 # above is a single letter XOR encryption, this is just that with added iteration so it can do whole strings and a hexadecimal output
 # oh yeah we also have random key gen so thats nice i guess
 
+# credits to this guy for teaching me how to do it https://www.youtube.com/watch?v=P8Mc2DtxHq0
 
 import random
 
-def xor_bytes(data_bytes, key_bytes):
+def xor_bytes(data_bytes, key_bytes): # i couldve done it individually but i saw someone on stackoverflow use a function for it, decided why not as it looks clean
     return bytes([data_bytes[i] ^ key_bytes[i] for i in range(len(data_bytes))])
 
 def main():
@@ -45,7 +46,7 @@ def main():
             decrypted_text = decrypted_bytes.decode('utf-8')
             print("decrypted message:", decrypted_text)
         except UnicodeDecodeError:
-            print("decrypted bytes (could not decode to UTF-8 probably because it was an invalid input you are so good at this wow):", decrypted_bytes)
+            print("decrypted bytes (could not decode to UTF-8 probably because it was an invalid input you are so good at this wow):", decrypted_bytes) # i dont really know how you would get this error but i saw it on stackoverflow and stuff so i made this just in case
     else:
         print("Invalid choice. Literally can't make it any clearer. Either type in E or D its not that hard.")
 
